@@ -1,0 +1,441 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        bottom: 20px;
+    }
+    to {
+        opacity: 1;
+        bottom: 0px;
+    }
+}
+#dimmer {
+    visibility: hidden;
+    background: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 4;
+    transition: 0.5s;
+  }
+#dimmer.active
+{
+    visibility: visible;
+    opacity: 1;
+}
+#particles-js {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background: rgb(29, 29, 29);
+    z-index: -3;
+  }
+/*body {
+    background: linear-gradient(120deg, rgb(29, 29, 29), rgb(27, 27, 27) 60%, #4a9eff 60%, #45daff 100%);
+}*/
+.bg1
+{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: -65%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, #4a9eff 10%, hsl(192, 100%, 87%) 90%);
+    transform: skewX(150deg) translateX(0);
+    z-index: 0;
+}
+.bg2
+{
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url(paint.jpg);
+    background-size: cover;
+    mix-blend-mode: multiply;
+    opacity: 0.5;
+    z-index: -1;
+}
+.main
+{
+    
+    position: absolute; /*feel free to change*/
+    min-height: 100vh;
+    padding: 0 100px;
+    display: flex;
+    align-items: center;
+    /*animation: transitionIn 1.5s;
+    animation-delay: 1s;*/
+    user-select: none;
+}
+header
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+header .logo img {
+    max-width: 75px;
+    margin-right: 20px;
+}
+header ul 
+{
+    display: flex;
+}
+header ul li{
+    list-style: none;
+    margin: 0 10px;
+}
+header ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: 500;
+}
+header ul li a:hover,
+header ul li a.active
+{
+    color: #2d88ff;
+}
+.app
+{
+    position: absolute;
+    right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #262c37;
+    color: rgba(255,255,255,0.4);
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: 0.5s;
+}
+.app:hover
+{
+    color: #fff;
+}
+.app span
+{
+    display: block;
+    position: absolute;
+    background: #ffffff;
+}
+.app span:nth-child(1) 
+{
+    left: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+}
+.app:hover span:nth-child(1) 
+{
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s;  
+}
+
+.app span:nth-child(2) 
+{
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+}
+.app:hover span:nth-child(2) 
+{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;  
+}
+
+.app span:nth-child(3) 
+{
+    right: 0;
+    bottom: 0;
+    width: 2px;
+    height: 100%;
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+.app:hover span:nth-child(3) 
+{
+  transform: scaleY(1);
+  transform-origin: bottom;
+  transition: transform 0.5s; 
+  transition-delay: 0.5s; 
+}
+
+.app span:nth-child(4) 
+{
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.5s;
+    transition-delay: 0.5s;
+}
+.app:hover span:nth-child(4) 
+{
+  transform: scaleX(1);
+  transform-origin: left;
+  transition: transform 0.5s;  
+  transition-delay: 0.5s;
+}
+
+.app ion-icon
+{
+    margin-right: 10px;
+    font-size: 1.4em;
+}
+.contentBx
+{
+    margin-top: 130px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.contentBx .text 
+{
+    max-width: 800px;
+}
+.contentBx .text h2 
+{
+    font-size: 6em;
+    color: #45daff;
+    font-weight: bold;
+}
+.contentBx .text p
+{
+    font-size: 1.1em;
+    color: rgb(255, 255, 255);
+    line-height: 1.8em;
+}
+.contentBx .text h4
+{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+}
+.contentBx .text a:visited
+{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
+.divider{
+    width: 100px;
+    height: auto;
+    display: inline-block;
+}
+.contentBx .btn 
+{
+    display: flex;
+}
+.contentBx .btn a 
+{
+    /*background: #4a9eff;*/ 
+    position: relative;
+    width: 300px;
+    height: 75px;
+    color: #fff;
+    display: inline-flex;
+    text-decoration: none;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin: 10px 0; 
+    transition: 0.5s;
+    /*transform-style: preserve-3d;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);*/
+}
+.contentBx .btn a span 
+{
+    position: relative;
+    z-index: 2;
+}
+.contentBx .btn a:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: url(btn-bg2.png);
+    background-size: cover;
+    transform-origin: left;
+    transition: 0.75s;
+}
+.contentBx .btn a:hover:before 
+{
+    width:100%;
+}
+/*.btn:hover
+{
+    background: #733afa;
+}*/
+#popup
+{
+    position: fixed;
+    opacity: 0;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    background: rgb(255, 255, 255) 30%;
+    border-radius: 10px;
+    width: 450px;
+    padding: 80px 50px 50px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    z-index: 5;
+    visibility: hidden;
+    user-select: none;
+}
+#popup.active
+{
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+}
+#popup .popcontent
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#popup .popcontent img
+{
+    max-width: 200px;
+}
+#popup .popcontent h1
+{
+    font-size: 40px;
+    font-weight: 1500;
+    color: #333;
+    margin: 20px 0 10px;
+}
+#popup .popcontent p 
+{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+.close
+{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    opacity: 0.8;
+}  
+
+#popup2
+{
+    position: fixed;
+    opacity: 0;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    z-index: 1000;
+    background: rgb(255, 255, 255) 30%;
+    border-radius: 10px;
+    width: 450px;
+    padding: 80px 50px 50px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    transition: 0.5s;
+    z-index: 5;
+    visibility: hidden;
+    user-select: none;
+}
+#popup2.active
+{
+    visibility: visible;
+    opacity: 1;
+    top: 50%;
+}
+#popup2 .content
+{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#popup2 .content img
+{
+    max-width: 200px;
+}
+#popup2 .content h1
+{
+    font-size: 40px;
+    font-weight: 1500;
+    color: #333;
+    margin: 20px 0 10px;
+}
+#popup2 .content p 
+{
+    text-align: center;
+    font-size: 16px;
+    color: #333;
+}
+#sus
+{
+    position: fixed;
+    visibility: hidden;
+    top: 50%;
+    left: 45%;
+    transform: translate(-50%,-50%);
+    transform:scale(5);
+    z-index: 1000;
+    user-select: none;
+}
+#sus.active
+{
+    visibility: visible;
+    animation: opacityOn 2s normal forwards;
+}
+@keyframes opacityOn {
+    0% {
+        visibility: visible;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

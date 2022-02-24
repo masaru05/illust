@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function play(){
+             var audio = document.getElementById("amogus");
+             setTimeout(function(){
+    audio.play();
+    setTimeout(function(){
+        audio.pause();
+        audio.currentTime = 0;
+    }, 2000);
+}, 10);
+        }
+    </script>
+    <title>MASARU</title>
+    <link rel="icon" type="image/x-icon" href="ma.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="card.css">
+    <link rel="stylesheet" href="loader.css">
+    <link rel="icon" href="http://example.com/favicon.png">
+</head>
+<body>
+    <div id="dimmer"></div>
+    <div id="particles-js"></div>
+    <div class="bg1"></div>
+    <div class="bg2"></div>
+    <section class="main">
+        <header>
+            <a href="#" class="logo"><img src="logo.png"></a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#" onclick="popupToggle(); dimmerToggle();">About</a></li>
+                <li><a href="#" onclick="play(); susToggle();">Amogus</a></li>
+            </ul>
+            <a href="#" class="app"  onclick="popup2Toggle(); dimmerToggle();">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <ion-icon name="cash-outline"></ion-icon> Commission Me</a>
+        </header>
+        <div class="contentBx">
+            <div class="text">
+                <h2>Masaru's Profile</h2>
+                <p>Hey there. I go by Masaru, but feel free to call me Vincent.
+                This site is currently under development and is dedicated to my art career at 
+                <strong><a href="https://twitter.com/masaru9002" target="_blank" style="text-decoration:none" style="color:#fff">@masaru9002</a></strong>.
+                Check out my Twitter and Pixiv account if you have spare time. Thank you!!</p>
+                <h4><br>Contact Me</h4>
+                <div class="btn">
+                <a href="https://twitter.com/masaru9002" target="_blank"><span><ion-icon name="logo-twitter"></ion-icon>  Twitter</span></a>
+                <div class="divider"></div>
+                <a href="https://www.pixiv.net/en/users/21832610" target="_blank"><span><ion-icon name="brush-outline"></ion-icon>  Pixiv</span></a>
+                </div>
+            </div>
+        </div>
+ 
+        <div class="card" data-tilt data-tilt-glare data-tilt-max-glare="0.1">
+            <div class="card-image"></div>
+            <div class="card-text">
+              <span class="date">ILLUSTRATOR</span>
+              <h2>PROFILE</h2>
+              <p>I have <strong>1 year</strong> of experience in digital art, first started with Ibis Paint X on the smartphone, 
+                  then switched to Wacom Intuos S CTL-4100 & HP Victus 16. Though relatively inexperienced, I certainly can try my best for comms and
+                  produce a satisfactory outcome.  I cannot create full body drawings at an expert level yet, but my artstyle is very flexible and can very
+                  according to the customer's liking. R18 requests are accepted.
+              </p>
+            </div>
+            </div>     
+    </section>
+    <div id="sus">
+        <img src="sus.gif">
+    </div>
+    <div id="popup">
+        
+        <div class="popcontent">
+           
+            <h1>Page Info</h1>
+            <p>This page was coded by me, <strong>Masaru</strong>. Yup, that's right, 100% handmade. It's not that good yet though,
+                just give me more time to learn stuff. Do feel free to hire me to make a website for you! :D
+            </p>
+            <img src="questiom.png">
+        </div>
+        <a class="close" onclick="popupToggle(); dimmerToggle();"><img src="close.png"></a>
+    </div>
+    <div id="popup2">
+        
+        <div class="content">
+           
+            <h1>Not yet</h1>
+            <p>Thank you for actually clicking this button, truly. However, this feature is in development, so stay tuned. Meanwhile, you can still do that
+                by checking my Pixiv!
+            </p>
+            <img src="seseren-money.gif">
+        </div>
+        <a class="close" onclick="popup2Toggle(); dimmerToggle();"><img src="close.png"></a>
+    </div>
+    <audio id="amogus" src="vineboom.mp3"></audio>
+    <div class="loader">
+        <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+        </svg>
+    </div>
+    <script type="text/javascript" src="particles.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script>
+        function susToggle()
+        {
+            const popup = document.getElementById('sus');
+            popup.classList.toggle('active');
+            setTimeout(function() {
+                popup.classList.toggle('active');
+            }, 2000);
+            
+        }
+        function popupToggle()
+        {
+            const popup = document.getElementById('popup');
+            popup.classList.toggle('active')
+        }
+        function popup2Toggle()
+        {
+            const popup = document.getElementById('popup2');
+            popup.classList.toggle('active')
+        }
+            function dimmerToggle()
+            {
+                const popup = document.getElementById('dimmer');
+                popup.classList.toggle('active')
+            }
+    </script>
+    <script src="jquery-2.1.4.js"></script>
+    <script>
+       $(window).on("load", setTimeout(function(){
+           $(".loader").fadeOut("slow");
+       }, 1000));
+       
+    </script>
+    <script type="text/javascript" src="vanilla-tilt.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script async src=
+"https://platform.twitter.com/widgets.js" charset="utf-8">
+    </script>
+</body>
+</html>
