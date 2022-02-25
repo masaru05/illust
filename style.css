@@ -246,7 +246,11 @@ header ul li a.active
     font-weight: 700;
     color: rgb(255, 255, 255);
 }
+<<<<<<< HEAD
 .contentBx .text a:link
+=======
+.contentBx .text a
+>>>>>>> 5be76d095d1d868a7667cce238cddbfd5bf04d6d
 {
     text-decoration: none;
     color:rgb(255, 255, 255);
