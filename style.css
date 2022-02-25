@@ -246,6 +246,11 @@ header ul li a.active
     font-weight: 700;
     color: rgb(255, 255, 255);
 }
+.contentBx .text a:link
+{
+    text-decoration: none;
+    color:rgb(255, 255, 255);
+}
 .contentBx .text a:visited
 {
     text-decoration: none;
